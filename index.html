@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iLux Store | iPhones Premium, Apple Watch e AirPods</title>
+  <meta name="description"
+    content="Os iPhones mais desejados com qualidade premium e entrega rápida. Novos, seminovos e importados com garantia e procedência.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">iLux Store</div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- WPP FLOAT -->
+  <a href="https://wa.me/5511999999999?text=Olá! Vim pelo site e quero saber mais sobre os produtos!" class="wpp-float"
+    target="_blank" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <a href="#produtos">Produtos</a>
+    <a href="#ofertas">Ofertas</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#contato">Contato</a>
+    <a href="https://wa.me/5511999999999" class="mobile-wpp">📲 Comprar no WhatsApp</a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-progress" id="navProgress"></div>
+    <a href="#" class="nav-logo">
+      <svg class="nav-logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#logoG)" />
+        <circle cx="12" cy="12" r="4" fill="var(--bg)" opacity=".9" />
+        <defs>
+          <linearGradient id="logoG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#38bdf8" />
+            <stop offset="100%" stop-color="#818cf8" />
+          </linearGradient>
+        </defs>
+      </svg>
+      iLux<span>.</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#ofertas">Ofertas</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="https://wa.me/5511999999999" class="nav-cta" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          Falar no WhatsApp
+        </a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb--cyan"></div>
+    <div class="hero-orb hero-orb--violet"></div>
+    <div class="hero-orb hero-orb--pink"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-tag"><span class="hero-tag-dot"></span>✦ Premium Apple Store</div>
+        <h1 class="hero-h1">Os iPhones <span class="grad">mais desejados</span> com qualidade premium</h1>
+        <p class="hero-sub">Novos, seminovos e importados com garantia e procedência. Entrega rápida para todo o Brasil.
+        </p>
+        <div class="hero-btns">
+          <a href="#produtos" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            Ver Catálogo
+          </a>
+          <a href="https://wa.me/5511999999999" class="btn-wpp" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Comprar no WhatsApp
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">+2.400</div>
+            <div class="stat-label">Clientes satisfeitos</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">98%</div>
+            <div class="stat-label">Avaliações positivas</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5 anos</div>
+            <div class="stat-label">No mercado</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="iphone-stage">
+          <div class="iphone-ring"></div>
+          <div class="iphone-ring"></div>
+          <div class="iphone-ring"></div>
+          <div class="phone-glow"></div>
+          <div class="iphone-wrap">
+          <svg class="iphone-img" viewBox="0 0 300 580" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="phoneGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2a2a3e" />
+                <stop offset="50%" stop-color="#1a1a2e" />
+                <stop offset="100%" stop-color="#0d0d1a" />
+              </linearGradient>
+              <linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1a1a3e" />
+                <stop offset="100%" stop-color="#080820" />
+              </linearGradient>
+              <linearGradient id="sideGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#3a3a5e" />
+                <stop offset="100%" stop-color="#1a1a2e" />
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <radialGradient id="screenContent" cx="50%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#4fc3f7" stop-opacity="0.15" />
+                <stop offset="100%" stop-color="#7c4dff" stop-opacity="0.05" />
+              </radialGradient>
+            </defs>
+            <!-- Body -->
+            <rect x="8" y="8" width="284" height="564" rx="48" fill="url(#phoneGrad)" stroke="#3a3a5e"
+              stroke-width="1.5" />
+            <!-- Side reflection -->
+            <rect x="8" y="8" width="12" height="564" rx="6" fill="url(#sideGrad)" opacity=".5" />
+            <!-- Screen -->
+            <rect x="18" y="18" width="264" height="544" rx="40" fill="url(#screenGrad)" />
+            <rect x="18" y="18" width="264" height="544" rx="40" fill="url(#screenContent)" />
+            <!-- Dynamic Island -->
+            <rect x="105" y="30" width="90" height="28" rx="14" fill="#040408" />
+            <circle cx="170" cy="44" r="5" fill="#1a1a2e" />
+            <!-- Screen content mockup -->
+            <rect x="36" y="78" width="228" height="148" rx="16" fill="rgba(79,195,247,.06)"
+              stroke="rgba(79,195,247,.1)" stroke-width="1" />
+            <circle cx="150" cy="130" r="34" fill="rgba(79,195,247,.1)" stroke="rgba(79,195,247,.2)" stroke-width="1" />
+            <text x="150" y="137" text-anchor="middle" fill="#4fc3f7" font-size="28">🍎</text>
+            <text x="150" y="200" text-anchor="middle" fill="rgba(240,240,248,.7)" font-family="system-ui"
+              font-size="11" font-weight="500">iPhone 16 Pro Max</text>
+            <!-- App grid -->
+            <rect x="36" y="246" width="48" height="48" rx="12" fill="rgba(255,255,255,.05)"
+              stroke="rgba(255,255,255,.06)" stroke-width="1" />
+            <rect x="96" y="246" width="48" height="48" rx="12" fill="rgba(79,195,247,.08)" stroke="rgba(79,195,247,.1)"
+              stroke-width="1" />
+            <rect x="156" y="246" width="48" height="48" rx="12" fill="rgba(124,77,255,.08)"
+              stroke="rgba(124,77,255,.1)" stroke-width="1" />
+            <rect x="216" y="246" width="48" height="48" rx="12" fill="rgba(255,255,255,.05)"
+              stroke="rgba(255,255,255,.06)" stroke-width="1" />
+            <rect x="36" y="310" width="48" height="48" rx="12" fill="rgba(255,107,53,.08)" stroke="rgba(255,107,53,.1)"
+              stroke-width="1" />
+            <rect x="96" y="310" width="48" height="48" rx="12" fill="rgba(255,255,255,.05)"
+              stroke="rgba(255,255,255,.06)" stroke-width="1" />
+            <rect x="156" y="310" width="48" height="48" rx="12" fill="rgba(0,229,255,.06)" stroke="rgba(0,229,255,.08)"
+              stroke-width="1" />
+            <rect x="216" y="310" width="48" height="48" rx="12" fill="rgba(255,255,255,.05)"
+              stroke="rgba(255,255,255,.06)" stroke-width="1" />
+            <!-- Status bar -->
+            <rect x="36" y="380" width="100" height="8" rx="4" fill="rgba(255,255,255,.15)" />
+            <rect x="36" y="400" width="160" height="6" rx="3" fill="rgba(255,255,255,.08)" />
+            <rect x="36" y="418" width="130" height="6" rx="3" fill="rgba(255,255,255,.06)" />
+            <!-- Home bar -->
+            <rect x="108" y="546" width="84" height="4" rx="2" fill="rgba(255,255,255,.2)" />
+            <!-- Buttons -->
+            <rect x="0" y="120" width="5" height="40" rx="2.5" fill="#3a3a5e" />
+            <rect x="0" y="172" width="5" height="60" rx="2.5" fill="#3a3a5e" />
+            <rect x="0" y="244" width="5" height="60" rx="2.5" fill="#3a3a5e" />
+            <rect x="295" y="156" width="5" height="80" rx="2.5" fill="#3a3a5e" />
+            <!-- Camera -->
+            <rect x="50" y="32" width="45" height="12" rx="6" fill="#040408" />
+            <!-- Reflections -->
+            <path d="M30 40 Q50 26 100 22" stroke="rgba(255,255,255,.05)" stroke-width="1" fill="none" />
+            <path d="M200 22 Q260 26 272 50" stroke="rgba(255,255,255,.04)" stroke-width="1" fill="none" />
+          </svg>
+        </div>
+      </div>
+      <div class="badge-float badge1">
+        <span class="badge-icon">⚡</span>
+        <div class="badge-text">Chip A18 Pro<span>Ultra performance</span></div>
+      </div>
+      <div class="badge-float badge2">
+        <span class="badge-icon">📦</span>
+        <div class="badge-text">Entrega em 24h<span>Para todo o Brasil</span></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section id="produtos">
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-tag">✦ Nosso Catálogo</div>
+        <h2 class="section-h2">Produtos <span class="grad-cy">Premium</span>
+        </h2>
+        <p class="section-sub">Seleção exclusiva dos melhores produtos Apple com garantia de procedência e qualidade.
+        </p>
+      </div>
+      <div class="cats reveal">
+        <button class="cat-btn active" onclick="filterCat('all',this)">Todos</button>
+        <button class="cat-btn" onclick="filterCat('iphone',this)">iPhone</button>
+        <button class="cat-btn" onclick="filterCat('watch',this)">Apple Watch</button>
+        <button class="cat-btn" onclick="filterCat('airpods',this)">AirPods</button>
+        <button class="cat-btn" onclick="filterCat('acessorios',this)">Acessórios</button>
+      </div>
+      <div class="products-grid reveal" id="productsGrid">
+
+        <div class="product-card" data-cat="iphone">
+          <div class="product-img-wrap">
+            <div class="badge-hot">🔥 Mais Vendido</div>
+            <div class="product-shine"></div>
+            <svg class="product-img" viewBox="0 0 200 360" fill="none">
+              <rect x="6" y="6" width="188" height="348" rx="34" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1.5" />
+              <rect x="12" y="12" width="176" height="336" rx="28" fill="#080820" />
+              <rect x="78" y="15" width="44" height="16" rx="8" fill="#040408" />
+              <rect x="20" y="30" width="160" height="96" rx="10" fill="rgba(79,195,247,.06)"
+                stroke="rgba(79,195,247,.1)" stroke-width="1" /><text x="100" y="86" text-anchor="middle" font-size="42"
+                fill="rgba(79,195,247,.5)">📱</text>
+              <rect x="20" y="140" width="72" height="72" rx="16" fill="rgba(124,77,255,.1)"
+                stroke="rgba(124,77,255,.15)" stroke-width="1" />
+              <rect x="108" y="140" width="72" height="72" rx="16" fill="rgba(79,195,247,.08)"
+                stroke="rgba(79,195,247,.12)" stroke-width="1" />
+              <rect x="20" y="228" width="160" height="32" rx="10" fill="rgba(255,255,255,.04)" />
+              <rect x="20" y="272" width="120" height="20" rx="6" fill="rgba(255,255,255,.06)" />
+              <rect x="76" y="330" width="48" height="4" rx="2" fill="rgba(255,255,255,.15)" />
+              <rect x="0" y="80" width="4" height="28" rx="2" fill="#3a3a5e" />
+              <rect x="0" y="116" width="4" height="40" rx="2" fill="#3a3a5e" />
+              <rect x="0" y="164" width="4" height="40" rx="2" fill="#3a3a5e" />
+              <rect x="196" y="100" width="4" height="52" rx="2" fill="#3a3a5e" />
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">iPhone</div>
+            <div class="product-name">iPhone 16 Pro Max</div>
+            <div class="product-desc">256GB · Titânio Natural · Novo</div>
+            <div class="product-price">R$ 9.499</div>
+            <div class="product-parcel">ou 12x de R$ 791,58 sem juros</div>
+            <div class="product-actions">
+              <button class="btn-buy"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero o iPhone 16 Pro Max 256GB!')">Comprar
+                Agora</button>
+              <button class="btn-wpp-sm"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero saber mais sobre o iPhone 16 Pro Max!')"
+                title="WhatsApp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="iphone">
+          <div class="product-img-wrap">
+            <div class="badge-new">✨ Novo</div>
+            <div class="product-shine"></div>
+            <svg class="product-img" viewBox="0 0 200 360" fill="none">
+              <rect x="6" y="6" width="188" height="348" rx="34" fill="#2a1f0e" stroke="#5a4020" stroke-width="1.5" />
+              <rect x="12" y="12" width="176" height="336" rx="28" fill="#120e06" />
+              <rect x="78" y="15" width="44" height="16" rx="8" fill="#040408" />
+              <rect x="20" y="30" width="160" height="96" rx="10" fill="rgba(201,168,76,.06)"
+                stroke="rgba(201,168,76,.12)" stroke-width="1" /><text x="100" y="86" text-anchor="middle"
+                font-size="42" fill="rgba(201,168,76,.5)">📱</text>
+              <rect x="20" y="140" width="72" height="72" rx="16" fill="rgba(201,168,76,.08)" />
+              <rect x="108" y="140" width="72" height="72" rx="16" fill="rgba(201,168,76,.06)" />
+              <rect x="20" y="228" width="160" height="32" rx="10" fill="rgba(201,168,76,.04)" />
+              <rect x="20" y="272" width="120" height="20" rx="6" fill="rgba(201,168,76,.06)" />
+              <rect x="76" y="330" width="48" height="4" rx="2" fill="rgba(255,255,255,.15)" />
+              <rect x="0" y="80" width="4" height="28" rx="2" fill="#5a4020" />
+              <rect x="0" y="116" width="4" height="40" rx="2" fill="#5a4020" />
+              <rect x="0" y="164" width="4" height="40" rx="2" fill="#5a4020" />
+              <rect x="196" y="100" width="4" height="52" rx="2" fill="#5a4020" />
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">iPhone</div>
+            <div class="product-name">iPhone 16 Pro</div>
+            <div class="product-desc">128GB · Titânio Desert · Novo</div>
+            <div class="product-price">R$ 7.999</div>
+            <div class="product-parcel">ou 12x de R$ 666,58 sem juros</div>
+            <div class="product-actions">
+              <button class="btn-buy"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero o iPhone 16 Pro 128GB!')">Comprar
+                Agora</button>
+              <button class="btn-wpp-sm"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero saber mais sobre o iPhone 16 Pro!')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="iphone">
+          <div class="product-img-wrap">
+            <div class="product-shine"></div>
+            <svg class="product-img" viewBox="0 0 200 360" fill="none">
+              <rect x="6" y="6" width="188" height="348" rx="34" fill="#0e1a20" stroke="#203040" stroke-width="1.5" />
+              <rect x="12" y="12" width="176" height="336" rx="28" fill="#060e14" />
+              <rect x="78" y="15" width="44" height="16" rx="8" fill="#040408" />
+              <rect x="20" y="30" width="160" height="96" rx="10" fill="rgba(0,229,255,.05)" stroke="rgba(0,229,255,.1)"
+                stroke-width="1" /><text x="100" y="86" text-anchor="middle" font-size="42"
+                fill="rgba(0,229,255,.45)">📱</text>
+              <rect x="20" y="140" width="72" height="72" rx="16" fill="rgba(0,229,255,.07)" />
+              <rect x="108" y="140" width="72" height="72" rx="16" fill="rgba(79,195,247,.06)" />
+              <rect x="20" y="228" width="160" height="32" rx="10" fill="rgba(0,229,255,.04)" />
+              <rect x="76" y="330" width="48" height="4" rx="2" fill="rgba(255,255,255,.15)" />
+              <rect x="0" y="80" width="4" height="28" rx="2" fill="#203040" />
+              <rect x="0" y="116" width="4" height="40" rx="2" fill="#203040" />
+              <rect x="0" y="164" width="4" height="40" rx="2" fill="#203040" />
+              <rect x="196" y="100" width="4" height="52" rx="2" fill="#203040" />
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">iPhone</div>
+            <div class="product-name">iPhone 15 Plus</div>
+            <div class="product-desc">256GB · Azul · Seminovo A+</div>
+            <div class="product-price">R$ 5.299</div>
+            <div class="product-parcel">ou 12x de R$ 441,58 sem juros</div>
+            <div class="product-actions">
+              <button class="btn-buy"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero o iPhone 15 Plus 256GB!')">Comprar
+                Agora</button>
+              <button class="btn-wpp-sm"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero saber mais sobre o iPhone 15 Plus!')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="watch">
+          <div class="product-img-wrap">
+            <div class="badge-new">✨ Novo</div>
+            <div class="product-shine"></div>
+            <svg class="product-img" viewBox="0 0 200 220" fill="none">
+              <rect x="70" y="0" width="60" height="20" rx="8" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1" />
+              <rect x="70" y="200" width="60" height="20" rx="8" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1" />
+              <rect x="20" y="20" width="160" height="180" rx="40" fill="url(#watchGrad)" stroke="#3a3a5e"
+                stroke-width="1.5" />
+              <defs>
+                <linearGradient id="watchGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#2a2a3e" />
+                  <stop offset="100%" stop-color="#0d0d1a" />
+                </linearGradient>
+              </defs>
+              <rect x="32" y="32" width="136" height="156" rx="32" fill="#080820" />
+              <rect x="32" y="32" width="136" height="156" rx="32" fill="rgba(124,77,255,.05)" />
+              <circle cx="100" cy="110" r="44" stroke="rgba(79,195,247,.15)" stroke-width="1" fill="none" />
+              <circle cx="100" cy="110" r="36" stroke="rgba(79,195,247,.08)" stroke-width="1" fill="none" /><text
+                x="100" y="100" text-anchor="middle" fill="rgba(240,240,248,.9)" font-family="system-ui" font-size="20"
+                font-weight="700">10:09</text><text x="100" y="116" text-anchor="middle" fill="rgba(160,160,192,.7)"
+                font-family="system-ui" font-size="9">SEG 16 DEZ</text>
+              <line x1="100" y1="72" x2="100" y2="85" stroke="rgba(79,195,247,.6)" stroke-width="2"
+                stroke-linecap="round" />
+              <line x1="100" y1="135" x2="100" y2="148" stroke="rgba(79,195,247,.3)" stroke-width="2"
+                stroke-linecap="round" />
+              <line x1="62" y1="110" x2="75" y2="110" stroke="rgba(79,195,247,.3)" stroke-width="2"
+                stroke-linecap="round" />
+              <line x1="125" y1="110" x2="138" y2="110" stroke="rgba(79,195,247,.3)" stroke-width="2"
+                stroke-linecap="round" />
+              <rect x="185" y="70" width="6" height="30" rx="3" fill="#3a3a5e" />
+              <rect x="185" y="108" width="6" height="24" rx="3" fill="#3a3a5e" />
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Apple Watch</div>
+            <div class="product-name">Apple Watch Series 10</div>
+            <div class="product-desc">45mm · GPS + Cellular · Novo</div>
+            <div class="product-price">R$ 4.199</div>
+            <div class="product-parcel">ou 12x de R$ 349,91 sem juros</div>
+            <div class="product-actions">
+              <button class="btn-buy"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero o Apple Watch Series 10!')">Comprar
+                Agora</button>
+              <button class="btn-wpp-sm"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero saber mais sobre o Apple Watch Series 10!')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="airpods">
+          <div class="product-img-wrap">
+            <div class="badge-hot">🔥 Top Vendas</div>
+            <div class="product-shine"></div>
+            <svg class="product-img" viewBox="0 0 200 200" fill="none">
+              <rect x="60" y="40" width="80" height="120" rx="24" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1.5" />
+              <rect x="66" y="46" width="68" height="108" rx="20" fill="#0d0d1a" />
+              <circle cx="100" cy="78" r="22" fill="rgba(79,195,247,.08)" stroke="rgba(79,195,247,.15)"
+                stroke-width="1" /><text x="100" y="84" text-anchor="middle" font-size="18"
+                fill="rgba(79,195,247,.6)">🎧</text>
+              <rect x="80" y="110" width="40" height="6" rx="3" fill="rgba(255,255,255,.15)" />
+              <rect x="86" y="122" width="28" height="4" rx="2" fill="rgba(255,255,255,.08)" />
+              <circle cx="100" cy="148" r="8" fill="rgba(79,195,247,.2)" stroke="rgba(79,195,247,.3)"
+                stroke-width="1" />
+              <ellipse cx="60" cy="100" rx="16" ry="50" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1" />
+              <ellipse cx="140" cy="100" rx="16" ry="50" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1" />
+              <ellipse cx="60" cy="100" rx="10" ry="40" fill="#0d0d1a" />
+              <ellipse cx="140" cy="100" rx="10" ry="40" fill="#0d0d1a" />
+              <circle cx="60" cy="84" r="6" fill="rgba(79,195,247,.3)" />
+              <circle cx="140" cy="84" r="6" fill="rgba(79,195,247,.3)" />
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">AirPods</div>
+            <div class="product-name">AirPods Pro 2ª Geração</div>
+            <div class="product-desc">USB-C · ANC · Novo Lacrado</div>
+            <div class="product-price">R$ 2.199</div>
+            <div class="product-parcel">ou 12x de R$ 183,25 sem juros</div>
+            <div class="product-actions">
+              <button class="btn-buy"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero o AirPods Pro 2ª Geração!')">Comprar
+                Agora</button>
+              <button class="btn-wpp-sm"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero saber mais sobre o AirPods Pro!')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="acessorios">
+          <div class="product-img-wrap">
+            <div class="product-shine"></div>
+            <svg class="product-img" viewBox="0 0 200 200" fill="none">
+              <rect x="30" y="60" width="140" height="100" rx="20" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1.5" />
+              <rect x="36" y="66" width="128" height="88" rx="16" fill="#0d0d1a" />
+              <rect x="50" y="78" width="100" height="64" rx="10" fill="rgba(79,195,247,.05)"
+                stroke="rgba(79,195,247,.08)" stroke-width="1" /><text x="100" y="118" text-anchor="middle"
+                font-size="30" fill="rgba(79,195,247,.5)">⚡</text>
+              <rect x="86" y="40" width="28" height="20" rx="4" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1" />
+              <rect x="90" y="44" width="20" height="12" rx="2" fill="#0d0d1a" />
+              <rect x="86" y="160" width="28" height="20" rx="4" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1" />
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Acessório</div>
+            <div class="product-name">MagSafe Charger 15W</div>
+            <div class="product-desc">Carregador Magnético · Original</div>
+            <div class="product-price">R$ 399</div>
+            <div class="product-parcel">ou 6x de R$ 66,50 sem juros</div>
+            <div class="product-actions">
+              <button class="btn-buy"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero o MagSafe Charger!')">Comprar
+                Agora</button>
+              <button class="btn-wpp-sm"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero saber mais sobre o MagSafe!')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="iphone">
+          <div class="product-img-wrap">
+            <div class="product-shine"></div>
+            <svg class="product-img" viewBox="0 0 200 360" fill="none">
+              <rect x="6" y="6" width="188" height="348" rx="34" fill="#1e0e1a" stroke="#3a1030" stroke-width="1.5" />
+              <rect x="12" y="12" width="176" height="336" rx="28" fill="#0e060a" />
+              <rect x="78" y="15" width="44" height="16" rx="8" fill="#040408" />
+              <rect x="20" y="30" width="160" height="96" rx="10" fill="rgba(247,37,133,.05)"
+                stroke="rgba(247,37,133,.1)" stroke-width="1" /><text x="100" y="86" text-anchor="middle" font-size="42"
+                fill="rgba(247,37,133,.45)">📱</text>
+              <rect x="20" y="140" width="72" height="72" rx="16" fill="rgba(247,37,133,.07)" />
+              <rect x="108" y="140" width="72" height="72" rx="16" fill="rgba(247,37,133,.05)" />
+              <rect x="76" y="330" width="48" height="4" rx="2" fill="rgba(255,255,255,.15)" />
+              <rect x="0" y="80" width="4" height="28" rx="2" fill="#3a1030" />
+              <rect x="0" y="116" width="4" height="40" rx="2" fill="#3a1030" />
+              <rect x="0" y="164" width="4" height="40" rx="2" fill="#3a1030" />
+              <rect x="196" y="100" width="4" height="52" rx="2" fill="#3a1030" />
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">iPhone</div>
+            <div class="product-name">iPhone 14 Pro Max</div>
+            <div class="product-desc">256GB · Deep Purple · Seminovo A</div>
+            <div class="product-price">R$ 4.799</div>
+            <div class="product-parcel">ou 12x de R$ 399,91 sem juros</div>
+            <div class="product-actions">
+              <button class="btn-buy"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero o iPhone 14 Pro Max!')">Comprar
+                Agora</button>
+              <button class="btn-wpp-sm"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero saber mais sobre o iPhone 14 Pro Max!')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="airpods">
+          <div class="product-img-wrap">
+            <div class="product-shine"></div>
+            <svg class="product-img" viewBox="0 0 200 200" fill="none">
+              <rect x="60" y="50" width="80" height="110" rx="20" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1.5" />
+              <rect x="66" y="56" width="68" height="98" rx="16" fill="#0d0d1a" /><text x="100" y="118"
+                text-anchor="middle" font-size="32" fill="rgba(79,195,247,.5)">🎵</text>
+              <circle cx="100" cy="148" r="6" fill="rgba(79,195,247,.2)" stroke="rgba(79,195,247,.3)"
+                stroke-width="1" />
+              <ellipse cx="55" cy="105" rx="14" ry="42" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1" />
+              <ellipse cx="145" cy="105" rx="14" ry="42" fill="#1a1a2e" stroke="#3a3a5e" stroke-width="1" />
+              <circle cx="55" cy="92" r="5" fill="rgba(79,195,247,.25)" />
+              <circle cx="145" cy="92" r="5" fill="rgba(79,195,247,.25)" />
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">AirPods</div>
+            <div class="product-name">AirPods 4ª Geração</div>
+            <div class="product-desc">ANC · H2 Chip · Novo Lacrado</div>
+            <div class="product-price">R$ 1.799</div>
+            <div class="product-parcel">ou 10x de R$ 179,90 sem juros</div>
+            <div class="product-actions">
+              <button class="btn-buy"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero o AirPods 4 com ANC!')">Comprar
+                Agora</button>
+              <button class="btn-wpp-sm"
+                onclick="window.open('https://wa.me/5511999999999?text=Quero saber mais sobre o AirPods 4!')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section id="beneficios">
+    <div class="section-inner">
+      <div class="reveal text-center">
+        <div class="section-tag section-tag-center">✦ Por Que nos Escolher</div>
+        <h2 class="section-h2">Sua <span class="grad-gold">Confiança</span> é Nossa Prioridade</h2>
+        <p class="section-sub section-sub-center">Comprometidos com a melhor experiência de compra do mercado
+          Apple.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">🛡️</div>
+          <div class="benefit-title">Garantia de Qualidade</div>
+          <div class="benefit-desc">Todos os produtos passam por rigorosa inspeção técnica antes de chegar até você. Qualidade garantida.</div>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">🚀</div>
+          <div class="benefit-title">Entrega Expressa</div>
+          <div class="benefit-desc">Entregamos em até 24h para capitais e regiões metropolitanas. Rastreamento em tempo real.</div>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">💳</div>
+          <div class="benefit-title">Parcelamento Facilitado</div>
+          <div class="benefit-desc">Parcele em até 12x sem juros no cartão de crédito. Aceitamos todas as bandeiras.</div>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">💬</div>
+          <div class="benefit-title">Atendimento Personalizado</div>
+          <div class="benefit-desc">Especialistas disponíveis via WhatsApp para ajudar você a escolher o produto ideal.</div>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">✅</div>
+          <div class="benefit-title">Produtos Originais</div>
+          <div class="benefit-desc">100% originais Apple com nota fiscal e procedência comprovada. Sem surpresas desagradáveis.</div>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">🔧</div>
+          <div class="benefit-title">Suporte Pós-Venda</div>
+          <div class="benefit-desc">Acompanhamento completo após sua compra. Estamos aqui para garantir sua satisfação total.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTAS -->
+  <section id="ofertas">
+    <div class="offers-bg"></div>
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-tag">🔥 Oferta Especial</div>
+        <h2 class="section-h2">Promoção <span class="grad-hot">Limitada</span></h2>
+      </div>
+      <div class="offer-banner reveal offer-banner-mt">
+        <div>
+          <div class="offer-tag">⚡ Oferta Relâmpago — Estoque Limitado</div>
+          <h3 class="offer-h2">iPhone 15 Pro 128GB<br>Preto Titânio</h3>
+          <div class="offer-price-old">De R$ 7.299</div>
+          <div class="offer-price">R$ 6.499</div>
+          <div class="offer-parcel">ou 12x de R$ 541,58 sem juros · Economia de R$ 800</div>
+          <a href="https://wa.me/5511999999999?text=Quero aproveitar a oferta do iPhone 15 Pro!" class="btn-primary btn-offer"
+            target="_blank">
+            ⚡ Aproveitar Oferta Agora
+          </a>
+        </div>
+        <div class="countdown">
+          <div class="countdown-title">⏳ Oferta encerra em</div>
+          <div class="countdown-units">
+            <div class="cd-unit"><span class="cd-num" id="cdH">11</span>
+              <div class="cd-label">Horas</div>
+            </div>
+            <div class="cd-sep">:</div>
+            <div class="cd-unit"><span class="cd-num" id="cdM">47</span>
+              <div class="cd-label">Min</div>
+            </div>
+            <div class="cd-sep">:</div>
+            <div class="cd-unit"><span class="cd-num" id="cdS">23</span>
+              <div class="cd-label">Seg</div>
+            </div>
+          </div>
+          <div class="countdown-info">Apenas <strong class="text-hot">7 unidades</strong> restantes</div>
+          <div class="countdown-alert">
+            🔴 3 pessoas estão visualizando agora
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos">
+    <div class="section-inner">
+      <div class="reveal text-center">
+        <div class="section-tag section-tag-center">✦ Depoimentos</div>
+        <h2 class="section-h2">O Que Nossos <span class="grad-cy">Clientes</span> Dizem</h2>
+        <p class="section-sub section-sub-center">+2.400 clientes satisfeitos em todo o Brasil</p>
+      </div>
+      <div class="testimonials-wrap reveal">
+        <div class="swiper swiper-testimonials">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="t-stars">★★★★★</div>
+                <div class="t-text">"Comprei meu iPhone 16 Pro Max aqui e ficou além das expectativas. O produto chegou
+                  em 1 dia, embalagem impecável e com nota fiscal. Atendimento nota 10, me ajudaram a escolher o modelo
+                  certo!"</div>
+                <div class="t-user">
+                  <div class="t-avatar">MR</div>
+                  <div>
+                    <div class="t-name">Marcos Rocha</div>
+                    <div class="t-loc">📍 São Paulo, SP</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="t-stars">★★★★★</div>
+                <div class="t-text">"Já é minha terceira compra na iLux Store. Comprei dois iPhones e um Apple Watch.
+                  Sempre com preço justo, produto original e entrega rápida. Recomendo de olhos fechados para toda minha
+                  família!"</div>
+                <div class="t-user">
+                  <div class="t-avatar">JF</div>
+                  <div>
+                    <div class="t-name">Juliana Ferreira</div>
+                    <div class="t-loc">📍 Rio de Janeiro, RJ</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="t-stars">★★★★★</div>
+                <div class="t-text">"Desconfiava comprar online, mas o atendimento pelo WhatsApp me deixou muito seguro.
+                  Tiraram todas as minhas dúvidas, o iPhone chegou lacrado e com procedência. Experiência incrível!"
+                </div>
+                <div class="t-user">
+                  <div class="t-avatar">CS</div>
+                  <div>
+                    <div class="t-name">Carlos Souza</div>
+                    <div class="t-loc">📍 Belo Horizonte, MG</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="t-stars">★★★★★</div>
+                <div class="t-text">"Os AirPods Pro que comprei são simplesmente perfeitos. Chegou em 2 dias, produto
+                  novo lacrado, som impecável. O preço foi bem melhor que as lojas físicas aqui da minha cidade!"</div>
+                <div class="t-user">
+                  <div class="t-avatar">AL</div>
+                  <div>
+                    <div class="t-name">Ana Lima</div>
+                    <div class="t-loc">📍 Curitiba, PR</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="t-stars">★★★★★</div>
+                <div class="t-text">"Comprei um iPhone 15 seminovo A+ e fiquei impressionado com a qualidade. Parecia
+                  novo! O suporte pós-venda também é excelente, fiz algumas perguntas e responderam super rápido."</div>
+                <div class="t-user">
+                  <div class="t-avatar">RM</div>
+                  <div>
+                    <div class="t-name">Rafael Martins</div>
+                    <div class="t-loc">📍 Porto Alegre, RS</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria">
+    <div class="section-inner">
+      <div class="reveal text-center">
+        <div class="section-tag section-tag-center">✦ Linha Completa</div>
+        <h2 class="section-h2">O Ecossistema <span class="grad-cy">Apple</span> Completo</h2>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
+          <div class="gallery-bg">📱</div>
+          <div class="gallery-glow"></div>
+          <div class="gallery-content">
+            <div class="gallery-label">iPhone</div>
+            <div class="gallery-sub">Linha 15 & 16 Pro</div>
+            <a href="#produtos" class="btn-primary btn-gallery">Ver
+              iPhones</a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-bg">⌚</div>
+          <div class="gallery-glow"></div>
+          <div class="gallery-content">
+            <div class="gallery-label">Apple Watch</div>
+            <div class="gallery-sub">Series 10 & Ultra 2</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-bg">🎧</div>
+          <div class="gallery-glow"></div>
+          <div class="gallery-content">
+            <div class="gallery-label">AirPods</div>
+            <div class="gallery-sub">Pro 2 & 4ª Geração</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-bg">⚡</div>
+          <div class="gallery-glow"></div>
+          <div class="gallery-content">
+            <div class="gallery-label">Acessórios</div>
+            <div class="gallery-sub">MagSafe & mais</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final">
+    <div class="cta-orb1"></div>
+    <div class="section-inner section-inner-rel">
+      <div class="reveal">
+        <div class="section-tag section-tag-center-lg">✦ Pronto para Comprar?</div>
+        <h2 class="cta-h2">Garanta hoje seu novo iPhone com <span class="grad-cy">segurança</span> e confiança</h2>
+        <p class="cta-sub">Fale agora com nosso especialista pelo WhatsApp e receba atendimento personalizado.</p>
+        <a href="https://wa.me/5511999999999?text=Olá! Quero comprar um iPhone. Pode me ajudar?" class="btn-wpp-big"
+          target="_blank">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          Falar no WhatsApp Agora
+        </a>
+        <div class="trust-badges">
+          <div class="trust-item"><span class="trust-icon">🔒</span> Compra 100% Segura</div>
+          <div class="trust-item"><span class="trust-icon">✅</span> Produtos Originais</div>
+          <div class="trust-item"><span class="trust-icon">🚀</span> Entrega Expressa</div>
+          <div class="trust-item"><span class="trust-icon">💳</span> 12x Sem Juros</div>
+          <div class="trust-item"><span class="trust-icon">📞</span> Suporte 7 Dias</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contato">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">iLux Store</a>
+        <p class="footer-desc">Especialistas em Apple há 5 anos. iPhones, Apple Watch, AirPods e acessórios com
+          garantia, qualidade e melhor preço.</p>
+        <div class="social-row">
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="https://wa.me/5511999999999" class="social-btn" aria-label="WhatsApp" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="#">→ iPhones Novos</a></li>
+          <li><a href="#">→ iPhones Seminovos</a></li>
+          <li><a href="#">→ Apple Watch</a></li>
+          <li><a href="#">→ AirPods</a></li>
+          <li><a href="#">→ Acessórios</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informações</h4>
+        <ul>
+          <li><a href="#">→ Sobre Nós</a></li>
+          <li><a href="#">→ Garantia</a></li>
+          <li><a href="#">→ Formas de Pagamento</a></li>
+          <li><a href="#">→ Política de Troca</a></li>
+          <li><a href="#">→ FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5511999999999" target="_blank">📲 (11) 99999-9999</a></li>
+          <li><a href="mailto:contato@iluxstore.com.br">✉️ contato@iluxstore.com.br</a></li>
+          <li><a href="#">📍 São Paulo, SP</a></li>
+          <li><a href="#">🕐 Seg-Sáb 9h–20h</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 iLux Store. Todos os direitos reservados.</div>
+      <div class="footer-copy">Desenvolvido com ❤️ para Apple Lovers</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
